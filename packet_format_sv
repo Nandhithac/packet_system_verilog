@@ -1,0 +1,23 @@
+class packet;
+  static int a;
+  static function void display();
+    $display("the value of a=%d",a);
+  endfunction
+class in_pkt;
+  static int b;
+  static function void display();
+    $display("the value of b=%d",b);
+  endfunction
+endclass
+endclass
+module pkt;
+ initial begin
+     packet::a=10;
+      packet::in_pkt::b=20;
+      packet::display();
+      packet::in_pkt::display();
+
+ end
+endmodule
+  
+  
